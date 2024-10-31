@@ -1,18 +1,15 @@
-let button = document.getElementById("button");
+let button1 = document.getElementById("button1");
+let button2 = document.getElementById("button2");
 let list = document.getElementById("list");
 
-button.addEventListener("click", () => {
-  prompt("შეიყვანეთ ინფორმაცია");
+button1.addEventListener("click", () => {
+  let info = prompt("შეიყვანეთ ინფორმაცია");
+  let li = document.createElement("li");
+  li.innerText = info;
+  list.appendChild(li);
 });
-
-if (prompt == null) {
-  alert("გთხოვთ ჩაწეროთ ინფორმაცია");
-}
-
-// if (info != null) {
-//   function listAdd() {
-//     let entry = document.createElement("li");
-//     entry.appendChild(document.createTextNode(info));
-//     list.appendChild(entry);
-//   }
-// }
+button2.addEventListener("click", () => {
+  if (list.firstChild) {
+    list.removeChild(list.firstChild);
+  }
+});
